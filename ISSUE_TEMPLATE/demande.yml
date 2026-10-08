@@ -1,0 +1,43 @@
+name: "Demande d'amélioration ou nouvelle fonctionnalité"
+description: Demander une amélioration, une nouvelle fonctionnalité ou un changement.
+title: "[Zone] Résumé court de la demande"
+labels: ["statut:backlog"]
+body:
+  - type: markdown
+    attributes:
+      value: "Une demande par issue. Le label `zone:*` est ajouté au démarrage du travail."
+  - type: input
+    id: zone
+    attributes:
+      label: Zone concernée
+      description: Partie du produit (voir les labels `zone:*` du dépôt).
+      placeholder: "Ex. application, site vitrine, documentation"
+    validations:
+      required: true
+  - type: textarea
+    id: contexte
+    attributes:
+      label: Contexte
+      description: Qu'est-ce qui manque ou ne va pas, et qu'essaies-tu de faire ?
+    validations:
+      required: true
+  - type: textarea
+    id: attendu
+    attributes:
+      label: Comportement attendu
+      description: À quoi cela doit ressembler une fois fait.
+    validations:
+      required: true
+  - type: textarea
+    id: captures
+    attributes:
+      label: Captures d'écran
+      description: Glisser-déposer des images (avant / après si utile). Aucune donnée confidentielle.
+  - type: dropdown
+    id: priorite
+    attributes:
+      label: Priorité
+      options: [Bloquant, Important, Confort]
+      default: 1
+    validations:
+      required: true
