@@ -1,0 +1,46 @@
+name: "Anomalie"
+description: Signaler un comportement incorrect.
+title: "[Zone] Ce qui ne marche pas"
+labels: ["statut:backlog"]
+body:
+  - type: input
+    id: zone
+    attributes:
+      label: Zone concernée
+      placeholder: "Ex. application, site vitrine"
+    validations:
+      required: true
+  - type: input
+    id: environnement
+    attributes:
+      label: Où
+      description: Adresse (production, préproduction, local), navigateur, appareil.
+    validations:
+      required: true
+  - type: textarea
+    id: etapes
+    attributes:
+      label: Étapes pour reproduire
+      placeholder: "1. …\n2. …\n3. …"
+    validations:
+      required: true
+  - type: textarea
+    id: constate
+    attributes:
+      label: Constaté et attendu
+      description: Ce qui se passe, et ce qui devrait se passer.
+    validations:
+      required: true
+  - type: textarea
+    id: captures
+    attributes:
+      label: Captures, messages d'erreur
+      description: Aucune donnée confidentielle.
+  - type: dropdown
+    id: priorite
+    attributes:
+      label: Priorité
+      options: [Bloquant, Important, Confort]
+      default: 1
+    validations:
+      required: true
